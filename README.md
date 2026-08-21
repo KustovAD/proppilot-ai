@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PropPilot AI
 
-## Getting Started
+Premium CRM for private-client real estate houses. Listings, pipeline, diary, analytics, and AI copy that is **not allowed to invent property facts**.
 
-First, run the development server:
+Portfolio demo — **no API keys**. The live workspace is **Meridian Private Estates**. Inventory, leads, and names are fictional.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[Product](#product) · [Demo](#demo) · [Stack](#stack) · [Quick start](#quick-start) · [License](#license)
+
+---
+
+## Product
+
+| Area | Behaviour |
+| --- | --- |
+| Marketing site | Landing, login, register, demo desk |
+| Dashboard | Active listings, new leads, open deals, expected commission, charts, diary, activity |
+| Properties | Grid + list, search, filters, sort, create / edit, photo-led detail |
+| Property file | Gallery, facts, agent, map placeholder, lead activity, appointments, AI desk |
+| Leads | Table + Kanban with drag-and-drop status persistence |
+| Lead file | Score + reason + next action, follow-up drafts (email / SMS / WhatsApp) |
+| Contacts, deals, tasks, calendar | Full CRUD with empty and success states |
+| Analytics | Conversion, deal size, sources, agent performance |
+| Team / settings | Roster, profile, workspace, demo reset |
+
+### AI desk
+
+Prompts send **only recorded facts**. Missing amenities, views, schools, and lifestyle claims are omitted — never guessed.
+
+- Listing headline, long / short copy, SEO, Instagram, Facebook
+- Lead scores with a reason and a recommended next action
+- Follow-ups as email, SMS, and WhatsApp in four tones
+
+The writer in `src/lib/ai/fallback.ts` uses only recorded facts. No API key.
+
+## Demo
+
+```
+oscar.d@example.net
+demo1234
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No keys. Sign in and click through the desk. Data stays in this browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p align="center">
+  <img src="docs/screenshots/01-landing.png" alt="PropPilot AI marketing site" width="900" />
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<p align="center">
+  <img src="docs/screenshots/03-dashboard.png" alt="Desk dashboard" width="900" />
+</p>
 
-## Learn More
+| Sign in | Pipeline |
+| --- | --- |
+| ![Login](docs/screenshots/02-login.png) | ![Leads Kanban](docs/screenshots/06-leads.png) |
 
-To learn more about Next.js, take a look at the following resources:
+| Listings | Property file |
+| --- | --- |
+| ![Properties](docs/screenshots/04-properties.png) | ![Property](docs/screenshots/05-property.png) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Lead file | Analytics |
+| --- | --- |
+| ![Lead](docs/screenshots/07-lead.png) | ![Analytics](docs/screenshots/08-analytics.png) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<p align="center">
+  <img src="docs/screenshots/09-calendar.png" alt="Diary calendar" width="900" />
+</p>
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 16** (App Router) + TypeScript
+- **Tailwind CSS v4** + shadcn/ui
+- **Zustand** + `localStorage` (no database)
+- **Zod** + React Hook Form
+- Recharts, Lucide, @dnd-kit
+- Grounded AI writer in `src/lib/ai/fallback.ts` — no API key
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Quick start
+
+No `.env`, no OpenAI, no Supabase.
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and sign in with the demo desk above.
+
+```bash
+npm run build
+npm run typecheck
+npm run lint
+```
+
+## How the demo works
+
+Everything you click is already in the repo:
+
+| Piece | Where it lives |
+| --- | --- |
+| Login | Local demo account in the browser |
+| CRM data | Zustand + `localStorage` |
+| Seed book | 20 properties, 30 leads, 10 agents in `src/lib/demo-data.ts` |
+| AI copy / scores / follow-ups | Deterministic writer from recorded facts only |
+| Reset | Settings → Restore fictional inventory |
+
+A Postgres schema exists in `supabase/schema.sql` as a sketch of a future backend. This portfolio build does not use it.
+
+## Architecture
+
+- CRM mutations go through `src/lib/store.ts`.
+- Route group `(crm)` wraps authenticated pages in the forest sidebar (`src/components/layout/app-shell.tsx`).
+- `/api/ai/*` never invents listing attributes.
+
+## License
+
+Portfolio demonstration. See [LICENSE](LICENSE). Listing notes for GitHub / Fiverr / Upwork: [docs/MARKETPLACE.md](docs/MARKETPLACE.md).
