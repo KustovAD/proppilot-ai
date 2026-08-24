@@ -76,7 +76,7 @@ export function PropertyFormDialog({
         features,
         currency: "USD",
         imageUrls: [
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80",
+          "/listings/02.jpg",
         ],
       });
       onSaved?.(id);

@@ -13,8 +13,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DEMO_EMAIL, DEMO_PASSWORD } from "@/lib/constants";
 
-const HERO =
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80";
+const HERO = "/hero.jpg";
 
 const FEATURES = [
   {

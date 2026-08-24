@@ -47,8 +47,7 @@ export default function LoginPage() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80)",
+            backgroundImage: "url(/login-panel.jpg)",
           }}
         />
         <div className="relative flex h-full flex-col justify-end p-10 text-sidebar-foreground">

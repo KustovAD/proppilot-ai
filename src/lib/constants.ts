@@ -15,7 +15,7 @@ export const APP_TAGLINE = "Private client CRM for modern real estate houses.";
 export const DEMO_EMAIL = "oscar.d@example.net";
 export const DEMO_PASSWORD = "demo1234";
 
-export const SEED_VERSION = 3;
+export const SEED_VERSION = 4;
 
 export const PROPERTY_TYPES = [
   "Apartment",
