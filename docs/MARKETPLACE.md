@@ -129,7 +129,7 @@ Yes. The CRM is responsive; desktop is the primary operator view.
 
 Upload in this order:
 
-1. Landing (`docs/screenshots/01-landing.png`)
+1. Landing (`docs/screenshots/landing.png`)
 2. Dashboard (`03-dashboard.png`)
 3. Properties (`04-properties.png`)
 4. Kanban (`06-leads.png`)
@@ -181,7 +181,7 @@ Happy to jump on a 10-minute screen share and click through Meridian Private Est
 ### Profile project (add after the demo is live)
 
 Title: `PropPilot AI — private-client real estate CRM`
-Thumbnail: `docs/screenshots/03-dashboard.png`
+Thumbnail: `docs/screenshots/dashboard.png`
 Body: 4–6 screenshots + the one-liner + stack + “demo login on request / in the proposal”.
 
 ---

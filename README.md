@@ -42,27 +42,27 @@ demo1234
 No keys. Sign in and click through the desk. Data stays in this browser.
 
 <p align="center">
-  <img src="docs/screenshots/01-landing.png" alt="PropPilot AI marketing site" width="900" />
+  <img src="docs/screenshots/landing.png" alt="PropPilot AI marketing site" width="900" />
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/03-dashboard.png" alt="Desk dashboard" width="900" />
+  <img src="docs/screenshots/dashboard.png" alt="Desk dashboard" width="900" />
 </p>
 
 | Sign in | Pipeline |
 | --- | --- |
-| ![Login](docs/screenshots/02-login.png) | ![Leads Kanban](docs/screenshots/06-leads.png) |
+| ![Login](docs/screenshots/login.png) | ![Leads Kanban](docs/screenshots/leads.png) |
 
 | Listings | Property file |
 | --- | --- |
-| ![Properties](docs/screenshots/04-properties.png) | ![Property](docs/screenshots/05-property.png) |
+| ![Properties](docs/screenshots/properties.png) | ![Property](docs/screenshots/property.png) |
 
 | Lead file | Analytics |
 | --- | --- |
-| ![Lead](docs/screenshots/07-lead.png) | ![Analytics](docs/screenshots/08-analytics.png) |
+| ![Lead](docs/screenshots/lead.png) | ![Analytics](docs/screenshots/analytics.png) |
 
 <p align="center">
-  <img src="docs/screenshots/09-calendar.png" alt="Diary calendar" width="900" />
+  <img src="docs/screenshots/calendar.png" alt="Diary calendar" width="900" />
 </p>
 
 ## Stack

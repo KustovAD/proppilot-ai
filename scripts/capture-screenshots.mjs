@@ -52,11 +52,11 @@ const publicPage = await publicContext.newPage();
 
 await publicPage.goto(`${BASE}/`, { waitUntil: "networkidle" });
 await publicPage.getByRole("heading", { name: /inventory like editorial/i }).waitFor();
-await shot(publicPage, "01-landing");
+await shot(publicPage, "landing");
 
 await publicPage.goto(`${BASE}/login`, { waitUntil: "networkidle" });
 await publicPage.getByRole("heading", { name: "Sign in" }).waitFor();
-await shot(publicPage, "02-login");
+await shot(publicPage, "login");
 await publicContext.close();
 
 const context = await browser.newContext({
@@ -70,30 +70,30 @@ const page = await context.newPage();
 
 await page.goto(`${BASE}/dashboard`, { waitUntil: "networkidle" });
 await page.getByText("Active listings").waitFor({ timeout: 20000 });
-await shot(page, "03-dashboard");
+await shot(page, "dashboard");
 
 await page.goto(`${BASE}/properties`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Properties" }).waitFor();
-await shot(page, "04-properties");
+await shot(page, "properties");
 
 await page.goto(`${BASE}/properties/prp_01`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Mayfair Residence" }).waitFor();
-await shot(page, "05-property");
+await shot(page, "property");
 
 await page.goto(`${BASE}/leads`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Leads" }).waitFor();
-await shot(page, "06-leads");
+await shot(page, "leads");
 
 await page.goto(`${BASE}/leads/led_01`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Helena Crowe" }).waitFor();
-await shot(page, "07-lead");
+await shot(page, "lead");
 
 await page.goto(`${BASE}/analytics`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Analytics" }).waitFor();
-await shot(page, "08-analytics");
+await shot(page, "analytics");
 
 await page.goto(`${BASE}/calendar`, { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Calendar" }).waitFor();
-await shot(page, "09-calendar");
+await shot(page, "calendar");
 
 await browser.close();
